@@ -1,0 +1,21 @@
+@charset "ISO-8859-1";
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #ffffff;
+}
+
+
+.btn {
+  transform: translateY(-50%);
+  fill: #fff;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.6;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="navbar">
+<head>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css" />
+<link href="navbar.css" rel="stylesheet">
+<meta charset="ISO-8859-1">
+<title>ADD Patient</title>
+</head>
+<body>
+	<div layout:fragment="pagecontent">
+		<div class="container">
+					<div class="card">
+				<div class="card-header">Add new person :</div>
+				<div class="card-body">
+					<form th:action="@{savePatient}" method="post">
+						<div class="form-group">
+							<label class="control-label">Name</label> 
+							<input type="text"
+						 		name="name" class="form-control"
+								th:value="${patient.name}"> <span></span>
+						</div>
+						<div class="form-group">
+							<label class="control-label">State</label> <input type="checkbox"
+								name="malade" class="form-control"
+								th:checked="${patient.malade}"> <span></span>
+						</div>
+
+						<br>
+						<div class="form-group">
+							<button class="btn btn-primary" type="submit">Add</button>
+							<a type="button" class="btn btn-secondary"th:href="@{listpatients}">Add new Person</a>
+						</div>
+</form>
+</div>
+			</div>
+			</div>
+			</div>
+			
+</body>
+</html>
