@@ -1,27 +1,34 @@
 package fr.lamia.Entities;
 
+import java.io.Serializable;
 
-import javax.persistence.*;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-
-import java.util.Set;
-@Data
-@Entity @NoArgsConstructor @AllArgsConstructor @ToString
-
-@Table(name = "role")
-public class Role {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String name;
-
-    @ManyToMany(mappedBy = "roles")
-    private Set<User> users;
-    
+import javax.persistence.Entity;
+import javax.persistence.Id;
+@Entity
+public class Role implements Serializable {
+	@Id
+	private String role;
+	private String description;
+	public Role(String role, String description) {
+		super();
+		this.role = role;
+		this.description = description;
+	}
+	public Role() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 }

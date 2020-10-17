@@ -12,32 +12,52 @@
 <body>
 	<div layout:fragment="pagecontent">
 		<div class="container">
-					<div class="card">
-				<div class="card-header">Add new person :</div>
+			<div class="card">
+				<div class="card-header">
+					<svg width="1em" height="1em" viewBox="0 0 16 16"
+						class="bi bi-person-plus-fill" fill="currentColor"
+						xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd"
+							d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7.5-3a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+</svg>
+					Add new patient's informations
+				</div>
 				<div class="card-body">
 					<form th:action="@{savePatient}" method="post">
-						<div class="form-group">
-							<label class="control-label">Name</label> 
-							<input type="text"
-						 		name="name" class="form-control"
-								th:value="${patient.name}"> <span></span>
+						<div class="form-group row">
+							<label class="control-label col-md-6">Name :</label> <input
+								type="text" name="name" th:value="${patient.name}">
 						</div>
-						<div class="form-group">
-							<label class="control-label">State</label> <input type="checkbox"
-								name="malade" class="form-control"
-								th:checked="${patient.malade}"> <span></span>
+
+						<div class="form-group row">
+							<label class="control-label col-md-6">prenom : </label> <input
+								type="text" name="name" th:value="${patient.prenom}">
+						</div>
+						<div class="form-group row">
+							<label class="control-label col-md-6"> Date de naissance :
+							</label> <input type="text" name="date_Naissance"
+								th:value="${patient.date_Naissance}">
+						</div>
+						<div class="form-group row">
+							<label class="control-label col-md-6"> Adresse : </label> <input
+								type="text" name="Adresse" th:value="${patient.adresse}">
+						</div>
+						<div class="form-group row">
+							<label class="control-label col-md-6"> Numero tel : </label> <input
+								type="text" name="numero_tel" th:value="${patient.numero_tel}">
 						</div>
 
 						<br>
-						<div class="form-group">
-							<button class="btn btn-primary" type="submit">Add</button>
-							<a type="button" class="btn btn-secondary"th:href="@{listpatients}">Add new Person</a>
+						<div class="form-group pull-right">
+							<button class="btn btn-primary rounded-pill" type="submit">Add</button>
+							<a type="button" class="btn btn-secondary"
+								th:href="@{listpatients}">Back</a>
 						</div>
-</form>
-</div>
+					</form>
+				</div>
 			</div>
-			</div>
-			</div>
-			
+		</div>
+	</div>
+
 </body>
 </html>

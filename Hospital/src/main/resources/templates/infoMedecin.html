@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="navbar">
+<head>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css" />
+<meta charset="ISO-8859-1">
+<title>info medecin</title>
+</head>
+<body>
+	<div layout:fragment="pagecontent">
+		<div class="container justify-content-center">
+			<div class="card"></div>
+			<div class="card text-center">
+				<div class="card-header">
+					<ul class="nav nav-pills card-header-pills">
+						<li class="nav-item"><a class="nav-link active" href="#">informations
+								Personnelles</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Fiche
+								Technique</a></li>
+						<li class="nav-item"><a class="nav-link" href="#"
+							tabindex="-1" aria-disabled="true">Dentition</a></li>
+					</ul>
+				</div>
+				<div class="card-body">
+					<h5 class="card-title">info</h5>
+					<div class="card-body">
+						<form th:action="@{/infomedecin}" method="post">
+								<label th:text="${medecin.id}">numero patient</label>
+								<label th:text="${medecin.name}">Nom</label>
+								<label th:text="${medecin.date_Naissance}">Date de naissance</label>
+								<label th:text="${medecin.adresse}">Adresse</label>
+								<label th:text="${medecin.prenom}">Prenom</label>
+								<label th:text="${medecin.numero_tel}">numero tel </label>
+						</form>
+
+						<a href="#" class="btn btn-primary">Paiement</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+</body>
+</html>

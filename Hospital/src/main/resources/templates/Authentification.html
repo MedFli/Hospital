@@ -1,0 +1,70 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="navbar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css" />
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script src='https://platform.twitter.com/widgets.js' charset="utf-8"></script>
+
+<meta charset="ISO-8859-1">
+<link rel="canonical"
+	href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+<!-- Bootstrap core CSS -->
+<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="Acceuil.css" rel="stylesheet">
+<title>S'inscrire</title>
+
+</head>
+
+<body class="form-login text-center"
+	style="background-color: powderblue;">
+	<div layout:fragment="pagecontent">
+		<div class="container">
+			<div class="card " style="text-align: center; margin: 24px 0 12px 0;">
+				<div class="card-header">
+					<i class='fas fa-clinic-medical'
+						style='font-size: 48px; color: red'></i>
+				</div>
+				<div class="card-body">
+					<form th:action="@{saveUser}" method="post">
+						<i class="fa fa-user-plus" style="font-size: 36px"> User
+							Account</i> <br> <br>
+						<div class="form-group"
+							style="margin-left: auto; margin-right: auto">
+							<label for="username"></label><i class='fas fa-fingerprint'
+								style='font-size: 24px'><input type="text"
+								class="form-control rounded-pill text-center" id="username"
+								placeholder="Enter username" name="username" required></i>
+						</div>
+						<div class="form-group"
+							style="margin-left: auto; margin-right: auto">
+							<label for="password"></label><i class='fas fa-key'
+								style='font-size: 24px'> <input type="password"
+								class="form-control rounded-pill text-center" id="password"
+								placeholder="Enter password" name="password" required></i> <br> <br>
+							<button type="submit"
+								class="btn btn-outline-danger rounded-pill btn-lg">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+

@@ -19,39 +19,30 @@
 							<input type="search" name="keyword" value="" size="27"
 								maxlength="150" placeholder="Rechercher du staff">
 							<button class="btn btn-primary">Search</button>
-							<a type="button" class="btn btn-secondary">Add new Doctor</a>
+							<a type="button" class="btn btn-secondary"
+								th:href="@{/addMedecin}">Add new Doctor</a>
 						</div>
-						 
+
 					</form>
 				</div>
 				<br>
-
-
 				<table class="table ">
-
-					<tr>
-						<th>ID</th>
+					<tr>	
 						<th>Name</th>
 						<th>PRENOM</th>
-						<th>DATE NAISS</th>
-						<th>SPECIALITE</th>
-						<th>DISPONIBILITE</th>
+						<th>Specialite</th>
 					</tr>
 					<tr th:each="m:${listmedecin}">
-						<td th:text="${m.id}"></td>
 						<td th:text="${m.name}"></td>
-						<td th:text="${m.prenom}"></td>
-						<td th:text="${m.datedenaissace}"></td>
+						<td th:text="${m.prenom}"></td>						
 						<td th:text="${m.specialite}"></td>
-						<td th:text="${m.disponibilite}"></td>
-						
 						<td><a class="btn btn-secondary">edit</a></td>
 						<td><a class="btn btn-danger"
 							th:href="@{deletemedecin(id=${m.id})}">delete</a></td>
+						<td><a class="btn btn-outline-info"
+							th:href="@{/infoMedecin(id=${m.id})}">info</a></td>
 					</tr>
-
 				</table>
-
 				<nav aria-label="Page navigation example justify-content-center">
 					<ul class="pagination ">
 						<li class="page-item" th:each="page,status:${pages}"><a

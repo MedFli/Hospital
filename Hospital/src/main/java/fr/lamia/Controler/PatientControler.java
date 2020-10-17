@@ -1,12 +1,12 @@
 package fr.lamia.Controler;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.lamia.DAO.PatientRepository;
@@ -17,37 +17,57 @@ public class PatientControler {
 	@Autowired
 	private PatientRepository patientRepository;
 
-	
-	@GetMapping(path = "/addPatient")
+	@RequestMapping(value = "addPatient",method = RequestMethod.GET)
 	public String addPatient(Model model) {
 		model.addAttribute("patient", new Patient());
 		return "addPatient";
 	}
-	
-@PostMapping("savePatient")
-public String savePatient(Patient patient) {
-	patientRepository.save(patient);
-	return "redirect:/listpatients";
-}
-	@GetMapping(path = "/listpatients")
-	public String list(Model model ,@RequestParam(name ="page", defaultValue ="1") int page ,
-			                        @RequestParam (name ="size", defaultValue ="5") int size,
-			                        @RequestParam(name ="keyword", defaultValue ="") String keyw ) {
-		Page<Patient> lp = patientRepository.findByNameContains(keyw,PageRequest.of(page, size));
-		model.addAttribute("listpatients",lp.getContent());
-		model.addAttribute("pages",new int[lp.getTotalPages()]);
-		model.addAttribute("currentPage",page);
-		model.addAttribute("keyword",keyw);
-		return "listpatients";
+
+	@RequestMapping(value = "savePatient",method = RequestMethod.POST)
+	public String savePatient(Patient patient) {
+		patientRepository.save(patient);
+		return "redirect:/listpatients";
+	} 
+
+	@RequestMapping(value = "/infoPatient", method = RequestMethod.GET)
+	public String getPatient(@RequestParam Long id,Patient patient) {
+		patientRepository.findById(id);
+		patientRepository.save(patient);
+		return "infoPatient";
 	}
 	
+	@RequestMapping(value = "/ficheTechnique", method = RequestMethod.GET)
+	public String infoTechnique() {
+	
+		return "ficheTechnique";
+	}
+	
+	@GetMapping(path = "/Dentition")
+	public String infoDent() {
+	
+		return "Dentition";
+	}
+
+
 	@GetMapping(path = "/deletepatient")
 	public String deletepatient(Long id) {
 		patientRepository.deleteById(id);
 		return "redirect:/listpatients";
-		
+
 	}
 
+	@GetMapping(path = "/listpatients")
+	public String listpatients(Model model) {
+		List<Patient> lp = patientRepository.findAll();
+		model.addAttribute("listpatients", lp);
+		return "listpatients";
 
-
+	}
+	
+	@GetMapping(path = "/Paiement")
+	public String Paiement() {
+	
+		return "Paiement";
+	}
+	
 }

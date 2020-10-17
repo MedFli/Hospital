@@ -1,41 +1,40 @@
 package fr.lamia.Controler;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import fr.lamia.DAO.UserRepository;
+import fr.lamia.Entities.Patient;
 import fr.lamia.Entities.User;
 
+@Controller
 public class UserControler {
-	@Controller
-	@RequestMapping({"/index" })
-	public class IndexController {
+	@Autowired
+	private UserRepository userRepository;
 
-	    @SuppressWarnings("unused")
-		private final PasswordEncoder passwordEncoder;
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
 
-	    @Autowired
-	    public IndexController(PasswordEncoder passwordEncoder) {
-	        this.passwordEncoder = passwordEncoder;
-	    }
+	@GetMapping("/logout")
+	public String logout() {
+		return "redirect:/login";
+	}
 
-	    @GetMapping
-	    public String main(Model model) {
-	        model.addAttribute("user", new User());
-	        return "Accueil";
-	    }
+	@RequestMapping(value = "Authentification", method = RequestMethod.GET)
+	public String Authentification(Model model) {
+		model.addAttribute("user", new User());
+		return "Authentification";
+	}
 
-	    @PostMapping
-	    public String save(User user, Model model) {
-	        model.addAttribute("user", user);
-	        return "saved";
-	        
-	        
-	        
-	    }
-}
+	@RequestMapping(value = "saveUser", method = RequestMethod.POST)
+	public String saveUser(User user) {
+		userRepository.save(user);
+		return "redirect:/login";
+	}
 }

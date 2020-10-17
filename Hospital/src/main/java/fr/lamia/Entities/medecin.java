@@ -26,5 +26,7 @@ public class medecin {
 	private Date datedenaissace;
 	private String specialite;
 	private Boolean disponibilite;
+	private long numero_tel;
+	private String Adresse;
 
 }

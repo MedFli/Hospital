@@ -1,55 +1,93 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-  <title>Main layout</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <!-- Custom styles for this template -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
- 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Main layout</title>
+<meta charset="utf-8">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!-- Custom styles for this template -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Custom styles for this template -->
+
 </head>
 <body>
 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <a class="fa fa-medkit" style="font-size:42px;color:red" href="index"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="height: 111px; font-family:Andale Mono, monospace ">
+  <a class="fa fa-medkit" style="font-size: 60px; color: red ; margin-right: 40px;"
+			href="index"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#"style="color: #ffffff;">Services</a>
+  <div class=" collapse navbar-collapse " id="navbarSupportedContent-333">
+    <ul class="nav navbar-nav navbar-center" style="position: absolute;
+    left: 50%;
+    transform: translatex(-50%);">
+      <li class="nav-item active">
+        <a class="nav-link" href="index" style="padding-right: 100px;">Home
+          <span class="sr-only">(current)</span>
+        </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"style="color: #ffffff;">Contact</a>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="Contact" style="padding-right: 100px;">Contact</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"style="color: #ffffff;">Blog</a>
-      </li>  
-       <li class="nav-item">
-        <a class="nav-link" href="#"style="color: #ffffff;">About Us</a>
-      </li>  
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" style="padding-right: 100px;">Remote
+        </a>
+        <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+          <a class="dropdown-item" href="listpatients">Patient management</a>
+          <a class="dropdown-item" href="listmedecin">Doctors/staff</a>
+          <a class="dropdown-item" href="#">Laboratory</a>
+        </div>
+      </li>
     </ul>
-        <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    <div class="col col-lg-2">
-     <button type="button" class="btn btn-outline-light">Connexion</button>
-    <button type="button" class="btn btn-outline-danger">Insciption</button>
-    </div>
-   
-  </div>  
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light">
+          <i class="fab fa-google-plus-g"></i>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-default"
+          aria-labelledby="navbarDropdownMenuLink-333">
+          <a class="dropdown-item" href="login">Login</a>
+          <a class="dropdown-item" href="logout">Logout</a>
+          <a class="dropdown-item" href="Authentification">Insciption</a>
+        </div>
+      </li>
+    </ul>
+  </div>
 </nav>
-<br>
-<section layout:fragment="pagecontent"></section>
+<!--/.Navbar -->
 
+	<div class="alert alert-danger" role="alert" style="padding-top: 120px ; text-align: center;font-family:Andale Mono, monospace">This is a beta
+		version 2.0, and has nothing to do with the final version . Developped
+		by Syndic8 Of code . All rights reserved . 2020.</div>
 
+	
+	<section layout:fragment="pagecontent">
 
-
+	</section>
+	
 </body>
 </html>
 
