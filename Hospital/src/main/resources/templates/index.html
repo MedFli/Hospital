@@ -32,7 +32,8 @@
 </head>
 <body>
 	<div layout:fragment="pagecontent" style="margin-top: Opx;">
-		<div class="card" style="background-color: powderblue; border: 0; font-size: 150%;">
+		<div class="card"
+			style="background-color: powderblue; border: 0; font-size: 150%;">
 			<video autoplay muted loop id="myVideo">
 				<source src="images/hospitalvideo.mp4" type="video/mp4">
 			</video>
@@ -191,66 +192,65 @@
 			out the form, your doctor will receive a notification to make an
 			appointment</p>
 		<img src="images/knt.jpg" class="card-img-top " alt="..."
-			style="border: 0;">
-<br> <br>
+			style="border: 0;"> <br> <br>
 		<div class="card bg-secondary text-white"
-			style=" font-weight: 400;margin-bottom: 0px;">
-				<div class="container" style="border:2px;">
-					<form >
+			style="font-weight: 400; margin-bottom: 0px;">
+			<div class="container" style="border: 2px;">
+				<form>
 					<br> <br>
-						<div class="form-row ">
-							<div class="form-group col-md-6">
-								<svg width="1em" height="1em" viewBox="0 0 16 16"
-									class="bi bi-brush-fill" fill="currentColor"
-									xmlns="http://www.w3.org/2000/svg">
+					<div class="form-row ">
+						<div class="form-group col-md-6">
+							<svg width="1em" height="1em" viewBox="0 0 16 16"
+								class="bi bi-brush-fill" fill="currentColor"
+								xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd"
-										d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.067 6.067 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.117 8.117 0 0 1-3.078.132 3.658 3.658 0 0 1-.563-.135 1.382 1.382 0 0 1-.465-.247.714.714 0 0 1-.204-.288.622.622 0 0 1 .004-.443c.095-.245.316-.38.461-.452.393-.197.625-.453.867-.826.094-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.2-.925 1.746-.896.126.007.243.025.348.048.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.175-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04z" />
+									d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.067 6.067 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.117 8.117 0 0 1-3.078.132 3.658 3.658 0 0 1-.563-.135 1.382 1.382 0 0 1-.465-.247.714.714 0 0 1-.204-.288.622.622 0 0 1 .004-.443c.095-.245.316-.38.461-.452.393-.197.625-.453.867-.826.094-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.2-.925 1.746-.896.126.007.243.025.348.048.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.175-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04z" />
 </svg>
-								<label for="inputEmail4">Nom</label> <input type="text"
-									class="form-control">
-							</div>
-							<div class="form-group col-md-6">
-								<label for="inputPassword4">Prenom</label> <input type="text"
-									class="form-control">
-							</div>
+							<label for="inputEmail4">Nom</label> <input type="text"
+								class="form-control">
 						</div>
-						<div class="form-group">
-							<label for="inputAddress">Address</label> <input type="text"
-								class="form-control" id="inputAddress"
-								placeholder="1234 Main St">
+						<div class="form-group col-md-6">
+							<label for="inputPassword4">Prenom</label> <input type="text"
+								class="form-control">
 						</div>
-						<div class="form-group">
-							<label for="inputAddress2">Address 2</label> <input type="text"
-								class="form-control" id="inputAddress2"
-								placeholder="Apartment, studio, or floor">
+					</div>
+					<div class="form-group">
+						<label for="inputAddress">Address</label> <input type="text"
+							class="form-control" id="inputAddress" placeholder="1234 Main St">
+					</div>
+					<div class="form-group">
+						<label for="inputAddress2">Address 2</label> <input type="text"
+							class="form-control" id="inputAddress2"
+							placeholder="Apartment, studio, or floor">
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="inputCity">City</label> <input type="text"
+								class="form-control" id="inputCity">
 						</div>
-						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label for="inputCity">City</label> <input type="text"
-									class="form-control" id="inputCity">
-							</div>
-							<div class="form-group col-md-4">
-								<label for="inputState">State</label> <select id="inputState"
-									class="form-control">
-									<option selected>Choose...</option>
-									<option>...</option>
-								</select>
-							</div>
-							<div class="form-group col-md-2">
-								<label for="inputZip">Zip</label> <input type="text"
-									class="form-control" id="inputZip">
-							</div>
+						<div class="form-group col-md-4">
+							<label for="inputState">State</label> <select id="inputState"
+								class="form-control">
+								<option selected>Choose...</option>
+								<option>...</option>
+							</select>
 						</div>
-						<div class="form-group">
-							<label for="FormControlTextarea1">Type your message</label>
-							<textarea class="form-control" id="exampleFormControlTextarea1"
-								rows="3"></textarea>
+						<div class="form-group col-md-2">
+							<label for="inputZip">Zip</label> <input type="text"
+								class="form-control" id="inputZip">
 						</div>
-						<br> <br> 		<a class="btn btn-lg btn-info rounded-pill pull-right"
-								href="Contact" role="button">Make an Appointment</a>
-					</form>
-				</div>
-				<br> <br>
+					</div>
+					<div class="form-group">
+						<label for="FormControlTextarea1">Type your message</label>
+						<textarea class="form-control" id="exampleFormControlTextarea1"
+							rows="3"></textarea>
+					</div>
+					<br> <br> <a
+						class="btn btn-lg btn-info rounded-pill pull-right" href="Contact"
+						role="button">Make an Appointment</a>
+				</form>
+			</div>
+			<br> <br>
 		</div>
 		<!-- Footer -->
 		<div class="page-footer font-small blue pt-4 mt-4"
@@ -360,6 +360,16 @@
 				}
 			}
 		</script>
+
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="/__/firebase/8.0.0/firebase-app.js"></script>
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+		<script src="/__/firebase/8.0.0/firebase-analytics.js"></script>
+
+		<!-- Initialize Firebase -->
+		<script src="/__/firebase/init.js"></script>
 	</div>
 
 </body>
