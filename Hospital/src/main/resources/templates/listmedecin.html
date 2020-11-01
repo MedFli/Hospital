@@ -27,14 +27,14 @@
 				</div>
 				<br>
 				<table class="table ">
-					<tr>	
+					<tr>
 						<th>Name</th>
 						<th>PRENOM</th>
 						<th>Specialite</th>
 					</tr>
 					<tr th:each="m:${listmedecin}">
 						<td th:text="${m.name}"></td>
-						<td th:text="${m.prenom}"></td>						
+						<td th:text="${m.prenom}"></td>
 						<td th:text="${m.specialite}"></td>
 						<td><a class="btn btn-secondary">edit</a></td>
 						<td><a class="btn btn-danger"

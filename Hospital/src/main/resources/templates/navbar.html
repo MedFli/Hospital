@@ -21,46 +21,24 @@
 
 		<!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="height: 111px; font-family:Andale Mono, monospace ">
-  <a class="fa fa-medkit" style="font-size: 60px; color: red ; margin-right: 40px;"
+  <a class="fa fa-medkit waves-light" style="font-size: 60px; color: red ; margin-right: 40px;"
 			href="index"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
     aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class=" collapse navbar-collapse " id="navbarSupportedContent-333">
-    <ul class="nav navbar-nav navbar-center" style="position: absolute;
-    left: 50%;
-    transform: translatex(-50%);">
-      <li class="nav-item active">
-        <a class="nav-link" href="index" style="padding-right: 100px;">Home
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-
-      <li class="nav-item active">
-        <a class="nav-link" href="Contact" style="padding-right: 100px;">Contact</a>
-      </li>
-      <li class="nav-item dropdown active">
+    <ul class="navbar-nav ml-auto nav-flex-icons" style="margin-right:40px;">
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false" style="padding-right: 100px;">Remote
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-bell"></i>
         </a>
-        <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-          <a class="dropdown-item" href="listpatients">Patient management</a>
-          <a class="dropdown-item" href="listmedecin">Doctors/staff</a>
-          <a class="dropdown-item" href="#">Laboratory</a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-default"
+          aria-labelledby="navbarDropdownMenuLink-333">
+          <a class="dropdown-item" href="login">SendBox</a>
+          <a class="dropdown-item" href="logout">Messages</a>
+          <a class="dropdown-item" href="Authentification">Appoitments</a>
         </div>
-      </li>
-    </ul>
-    <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li class="nav-item">
-        <a class="nav-link waves-effect waves-light">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link waves-effect waves-light">
-          <i class="fab fa-google-plus-g"></i>
-        </a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
@@ -74,12 +52,22 @@
           <a class="dropdown-item" href="Authentification">Insciption</a>
         </div>
       </li>
+           <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-heartbeat"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-default"
+          aria-labelledby="navbarDropdownMenuLink-333">
+          <a class="dropdown-item" href="hospitalManagement">Hospital management</a>
+          <a class="dropdown-item" href="Authentification">Laboratory</a>
+        </div>
+      </li>
     </ul>
-  </div>
 </nav>
 <!--/.Navbar -->
 
-	<div class="alert alert-danger" role="alert" style="padding-top: 120px ; text-align: center;font-family:Andale Mono, monospace">This is a beta
+	<div class="alert alert-danger" role="alert" style="padding-top: 110px;margin-bottom:0px ; text-align: center;font-family:Andale Mono, monospace">This is a beta
 		version 2.0, and has nothing to do with the final version . Developped
 		by Syndic8 Of code . All rights reserved . 2020.</div>
 

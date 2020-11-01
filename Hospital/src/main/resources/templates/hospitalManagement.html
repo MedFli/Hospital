@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="navbar">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!-- Custom styles for this template -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css" />
+<meta charset="ISO-8859-1">
+<title>Hospital Management</title>
+</head>
+<body>
+	<div layout:fragment="pagecontent">
+		<div class="container">
+			<form method="get" th:action="@{listpatients}"
+				style="box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);">
+				<div class="card">
+					<div class="card-header">List patients</div>
+					<div class="alert alert-warning" role="alert">To see more
+						info about patient please click button info !</div>
+					<div class="card-body">
+						<table class="table">
+							<tr th:each="p:${listpatients}">
+								<td th:text="${p.name}"></td>
+								<td><a class="btn btn-outline-info rounded-pill"
+									th:href="@{/infoPatient(id=${p.id}, name=${p.name},
+												 adresse=${p.adresse},date_Naissance=${p.date_Naissance},
+												 numero_tel=${p.numero_tel})}">info</a></td>
+								<td><a class="btn btn-light"
+									th:href="@{/deletepatient(id=${p.id})}">delete</a></td>
+							</tr>
+						</table>
+						<br> <input type="search" name="keyword" value="" size="27"
+							maxlength="150" placeholder="Rechercher les patients">
+						<button class="btn btn-info rounded-pill">Search</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<br>
+		<br>
+		<br>
+		
+		<div class="container">
+			<div class="card" style="box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);">
+				<div class="card-header">corps medical :</div>
+				<div class="card-body">
+					<form method="get" th:action="@{listmedecin}">
+						<div class="form-group">
+							<input type="search" name="keyword" value="" size="27"
+								maxlength="150" placeholder="Rechercher du staff">
+							<button class="btn btn-primary">Search</button>
+							<a type="button" class="btn btn-secondary"
+								th:href="@{/addMedecin}">Add new Doctor</a>
+						</div>
+						<table class="table">
+							<tr th:each="m:${listmedecin}">
+								<td th:text="${m.name}"></td>
+								<td><a class="btn btn-secondary">edit</a></td>
+								<td><a class="btn btn-danger"
+									th:href="@{deletemedecin(id=${m.id})}">delete</a></td>
+								<td><a class="btn btn-outline-info"
+									th:href="@{/infoMedecin(id=${m.id})}">info</a></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

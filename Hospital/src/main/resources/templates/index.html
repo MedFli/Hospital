@@ -2,7 +2,6 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorator="navbar">
-
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -20,43 +19,93 @@
 <link href="Acceuil.css" rel="stylesheet">
 <link href="video.css" rel="stylesheet">
 <title>Page D'acceuil</title>
-	<style>
+<style>
 .zoom {
-
-  transition: transform .2s; /* Animation */
+	transition: transform .2s; /* Animation */
 }
 
 .zoom:hover {
-  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+	transform: scale(1.2);
+	/* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 </style>
 </head>
 <body>
-	<div layout:fragment="pagecontent">
-		<div class="container">
-			<div class="card" style="background-color: powderblue;border: 0;box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);font-family:Andale Mono, monospace">
-				<video autoplay muted loop id="myVideo">
-  <source src="images/hospitalvideo.mp4" type="video/mp4">
-</video>
-<!-- Optional: some overlay text to describe the video -->
-<div class="content" style="text-align: center;">
-  <h1 class="font-weight-normal" style="text-indent:50px;text-align:justify;"><span class="font-weight-bold" style="color: white;letter-spacing: 2px;">Health Care</span> At your Desk</h1>
-  <p style="text-indent:50px;text-align:center;letter-spacing:3px;">A simple and creative web application used to manage a hospital effectives and patients. </p>
-  <!-- Use a button to pause/play the video with JavaScript -->
-  <a class="btn btn btn-info rounded-pill btn-lg" href="About" role="button">More info</a> <br> <br>
-</div>
+	<div layout:fragment="pagecontent" style="margin-top: Opx;">
+		<div class="card" style="background-color: powderblue; border: 0; font-size: 150%;">
+			<video autoplay muted loop id="myVideo">
+				<source src="images/hospitalvideo.mp4" type="video/mp4">
+			</video>
+			<!-- Optional: some overlay text to describe the video -->
+			<div class="content" style="text-align: center;">
+				<h1 class="font-weight-normal"
+					style="text-indent: 50px; text-align: center;">
+					<span class="font-weight-bold"
+						style="color: white; letter-spacing: 2px;">Health Care</span> At
+					your Desk
+				</h1>
+				<p class="text"
+					style="text-indent: 50px; text-align: center; letter-spacing: 3px;">A
+					simple and creative web application used to manage a hospital
+					effectives and patients</p>
+				<br> <br>
 			</div>
-			<br> <br>
-				<div class="card mb-3" style="border: 0;">
-						<div class="card-body" style="border: 0;text-indent:50px;text-align:center; letter-spacing:3px;">
-							
-							<p class="card-text" >A simple and creative web application using in managing hospitals effectives and patients.</p>
-							<p>developed with springboot and thymleaf.designed by bootsrap.</p>
+		</div>
+		<br>
+		<div class="card" style="border: 0;">
+			<div class="card-body" style="margin: 20px;">
+				<h1 class="text-center font-weight-normal">
+					Meet Our <span class="font-weight-bold" style="color: powderblue">Compagny</span>
+				</h1>
+				<br> <br>
+				<div class="card-deck" style="font-weight: 900">
+					<div class="card zoom" style="border: 0;">
+						<img class="card-img-top" src="images/44.jpg">
+						<div class="card-body">
+							<h4 class="card-title">Services Numeriques</h4>
+							<p class="card-text">accompagne vos pojet a l'air du
+								numerique et intelligence artificille</p>
 						</div>
 					</div>
+					<div class="card zoom" style="border: 0; text-align: center;">
+						<img class="card-img-top" src="images/img1.jpg">
+						<div class="card-body">
+							<h5 class="card-title">Transformation Digitale</h5>
+							<p class="card-text">utiliser une technologie numérique
+								nouvelle, rapide et évoluante</p>
+						</div>
+					</div>
+					<div class="card zoom" style="border: 0;">
+						<img class="card-img-top" src="images/toot.jpg">
+						<div class="card-body">
+							<h4 class="card-title">Conseil & Consulting</h4>
+							<p class="card-text">vous accompagne tout au long du
+								processus de votre transformation digitale</p>
+						</div>
+					</div>
+					<div class="card zoom" style="border: 0; text-align: center;">
+						<img class="card-img-top" src="images/img1.jpg">
+						<div class="card-body">
+							<h5 class="card-title">Transformation Digitale</h5>
+							<p class="card-text">utiliser une technologie numérique
+								nouvelle, rapide.</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
 		<br>
+
+		<div class="container">
+			<h1 class="text-center font-weight-normal">
+				Meet Our <span class="font-weight-bold" style="color: powderblue">Services</span>
+			</h1>
+			<br> <br>
 			<div id="carouselExampleCaptions" class="carousel slide"
-				data-ride="carousel" style="box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);font-family:Andale Mono, monospace">
+				data-ride="carousel"
+				style="box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2); font-family: Andale Mono, monospace">
 				<ol class="carousel-indicators">
 					<li data-target="#carouselExampleCaptions" data-slide-to="0"
 						class="active"></li>
@@ -69,7 +118,6 @@
 						<div class="carousel-caption d-none d-md-block">
 							<a class="btn btn btn-info rounded-pill pull-right"
 								href="Contact" role="button">Make an Appointment</a>
-
 						</div>
 					</div>
 					<div class="carousel-item active">
@@ -77,7 +125,6 @@
 						<div class="carousel-caption d-none d-md-block">
 							<a class="btn btn btn-info rounded-pill pull-right"
 								href="listpatients" role="button"> Patient Manager</a>
-
 						</div>
 					</div>
 					<div class="carousel-item">
@@ -85,7 +132,6 @@
 						<div class="carousel-caption d-none d-md-block">
 							<a class="btn btn btn-info rounded-pill pull-right"
 								href="listmedecin" role="button">Doctors Departement</a>
-
 						</div>
 					</div>
 				</div>
@@ -99,102 +145,116 @@
 					class="sr-only">Next</span>
 				</a>
 			</div>
-			<br><br>
+		</div>
+		<br> <br>
+		<div class="container">
 			<div class="card" style="border: 0;">
 				<div class="card-body" style="border: 0;">
-				
-				
 					<h1 class="text-center font-weight-normal">
 						Meet Our <span class="font-weight-bold" style="color: powderblue">Leadership</span>
 					</h1>
 					<br>
-					<div class="card-group" style="border: 0; text-align: center;text-indent:50px;letter-spacing:4px;">
-						<div class="card" style="border: 0;padding-right: 4px">
-							<<img src="images/jun.jpg" class="card-img-top rounded-circle zoom" alt="..." style="padding-right: 50px">
+					<div class="card-group">
+						<div class="card"
+							style="border: 0; text-align: center; text-indent: 50px; letter-spacing: 4px;">
+							<img src="images/jun.jpg"
+								class="card-img-top rounded-circle zoom" alt="..."
+								style="padding-right: 50px">
 							<div class="card-body">
 								<h5 class="card-title">MedAmine FLISSATE</h5>
 								<p class="card-text">
-									Founder & CEO <br>---- <br> Ramine Agency and Jrweb Agency <br> Fullstack java jee developer.
+									Founder & CEO <br>---- <br> Ramine Agency and Jrweb
+									Agency <br> Fullstack java jee developer.
 								</p>
 							</div>
-						
 						</div>
-						<div class="card" style="border: 0;">
-							<img src="images/rania.jpg" class="card-img-top rounded-circle zoom" alt="...">
+						<div class="card"
+							style="border: 0; text-align: center; text-indent: 50px; letter-spacing: 4px;">
+							<img src="images/rania.jpg"
+								class="card-img-top rounded-circle zoom" alt="..."
+								style="padding-right: 50px">
 							<div class="card-body">
 								<h5 class="card-title">Rania FLISSATE</h5>
 								<p class="card-text">
-									Co-Founder & COO <br>---- <br> Ramine agency <br> Service Delivery
-									Manager and C++ developer
+									Co-Founder & COO <br>---- <br> Ramine agency <br>
+									Service Delivery Manager and C++ developer
 								</p>
 							</div>
-						
 						</div>
-
 					</div>
-
 				</div>
-
-					<br><br><br>
-<div class="container justify-content-center" style="border: 0;text-align: center;">
-			<div class="card" style="border: 0;">
-				<div class="card-body" style="border: 0;">
-<h1 class="text-center font-weight-normal">
-						Meet Our <span class="font-weight-bold" style="color: powderblue">Compagny</span>
-					</h1>
+			</div>
+		</div>
+		<br> <br> <br>
+		<p class="bg-secondary text-white"
+			style="text-indent: 50px; text-align: center; letter-spacing: 3px; padding: 35px;">fill
+			out the form, your doctor will receive a notification to make an
+			appointment</p>
+		<img src="images/knt.jpg" class="card-img-top " alt="..."
+			style="border: 0;">
+<br> <br>
+		<div class="card bg-secondary text-white"
+			style=" font-weight: 400;margin-bottom: 0px;">
+				<div class="container" style="border:2px;">
+					<form >
 					<br> <br>
-					<div class="card-deck" style="border: 0;">
-						<div class="card zoom" style="border: 0;">
-							<img class="card-img-top" src="images/44.jpg">
-							<div class="card-body">
-								<h4 class="card-title">Services Numeriques</h4>
-								<p class="card-text">accompagne vos pojet a l'air du
-									numerique et intelligence artificille</p>
+						<div class="form-row ">
+							<div class="form-group col-md-6">
+								<svg width="1em" height="1em" viewBox="0 0 16 16"
+									class="bi bi-brush-fill" fill="currentColor"
+									xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd"
+										d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.067 6.067 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.117 8.117 0 0 1-3.078.132 3.658 3.658 0 0 1-.563-.135 1.382 1.382 0 0 1-.465-.247.714.714 0 0 1-.204-.288.622.622 0 0 1 .004-.443c.095-.245.316-.38.461-.452.393-.197.625-.453.867-.826.094-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.2-.925 1.746-.896.126.007.243.025.348.048.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.175-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04z" />
+</svg>
+								<label for="inputEmail4">Nom</label> <input type="text"
+									class="form-control">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputPassword4">Prenom</label> <input type="text"
+									class="form-control">
 							</div>
 						</div>
-						<div class="card zoom" style="border: 0;text-align: center;">
-							<img class="card-img-top" src="images/img1.jpg">
-							<div class="card-body">
-								<h5 class="card-title">Transformation Digitale</h5>
-								<p class="card-text">utiliser une technologie numérique
-									nouvelle, rapide et évoluant fréquemment pour résoudre des
-									problème.</p>
+						<div class="form-group">
+							<label for="inputAddress">Address</label> <input type="text"
+								class="form-control" id="inputAddress"
+								placeholder="1234 Main St">
+						</div>
+						<div class="form-group">
+							<label for="inputAddress2">Address 2</label> <input type="text"
+								class="form-control" id="inputAddress2"
+								placeholder="Apartment, studio, or floor">
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="inputCity">City</label> <input type="text"
+									class="form-control" id="inputCity">
+							</div>
+							<div class="form-group col-md-4">
+								<label for="inputState">State</label> <select id="inputState"
+									class="form-control">
+									<option selected>Choose...</option>
+									<option>...</option>
+								</select>
+							</div>
+							<div class="form-group col-md-2">
+								<label for="inputZip">Zip</label> <input type="text"
+									class="form-control" id="inputZip">
 							</div>
 						</div>
-						<div class="card zoom" style="border: 0;">
-							<img class="card-img-top" src="images/toot.jpg">
-							<div class="card-body">
-								<h4 class="card-title">Conseil & Consulting</h4>
-								<p class="card-text">vous accompagne tout au long du
-									processus de votre transformation digitale et même après.</p>
-							</div>
+						<div class="form-group">
+							<label for="FormControlTextarea1">Type your message</label>
+							<textarea class="form-control" id="exampleFormControlTextarea1"
+								rows="3"></textarea>
 						</div>
-					</div>
-
+						<br> <br> 		<a class="btn btn-lg btn-info rounded-pill pull-right"
+								href="Contact" role="button">Make an Appointment</a>
+					</form>
 				</div>
-			</div>
-			
-				<div class="card">
-						<div class="card-body font-italic" style="border: 0;">
-					
-							<blockquote class="blockquote mb-0">
-							<i class="fa fa-quote-left fa-2x fa-pull-left fa-border" style="border: 0;text-indent:50px;letter-spacing:3px;"> Men of action are favoured by godess of luck</i>
-							
-								<footer class="blockquote-footer"> Someone famous </footer>
-							</blockquote>
-						</div>
-					</div>
+				<br> <br>
 		</div>
-			</div>
-			
-
-		</div>
-
 		<!-- Footer -->
 		<div class="page-footer font-small blue pt-4 mt-4"
-			style="background: #2d3246;font-family:Andale Mono, monospace">
-			>
-
+			style="background: #2d3246; font-family: Andale Mono, monospace; margin-top: 0px">
 			<!-- Footer Links -->
 			<div class="container-fluid text-center text-md-left"
 				style="color: #ffffff;">
@@ -237,8 +297,6 @@
 						<p>
 							<a class="fas fa-print mr-3"></a> www.jrwagency.info
 						</p>
-
-
 					</div>
 					<!-- Grid column -->
 
@@ -286,20 +344,22 @@
 			<!-- Copyright -->
 		</div>
 		<!-- Footer -->
-<script>
-window.onscroll = function() {myFunction()};
+		<script>
+			window.onscroll = function() {
+				myFunction()
+			};
 
-var navbar = document.getElementById("mynav");
-var sticky = navbar.offsetTop;
+			var navbar = document.getElementById("mynav");
+			var sticky = navbar.offsetTop;
 
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    navbar.classList.add("sticky");
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-</script>
+			function myFunction() {
+				if (window.pageYOffset > sticky) {
+					navbar.classList.add("sticky");
+				} else {
+					navbar.classList.remove("sticky");
+				}
+			}
+		</script>
 	</div>
 
 </body>

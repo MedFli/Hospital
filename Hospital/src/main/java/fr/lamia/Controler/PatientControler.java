@@ -9,13 +9,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import fr.lamia.DAO.MedecinRepository;
 import fr.lamia.DAO.PatientRepository;
 import fr.lamia.Entities.Patient;
+import fr.lamia.Entities.medecin;
 
 @Controller
 public class PatientControler {
 	@Autowired
 	private PatientRepository patientRepository;
+	
+	@Autowired
+	private MedecinRepository medecinRepository;
 
 	@RequestMapping(value = "addPatient",method = RequestMethod.GET)
 	public String addPatient(Model model) {
@@ -26,7 +31,7 @@ public class PatientControler {
 	@RequestMapping(value = "savePatient",method = RequestMethod.POST)
 	public String savePatient(Patient patient) {
 		patientRepository.save(patient);
-		return "redirect:/listpatients";
+		return "redirect:/hospitalManagement";
 	} 
 
 	@RequestMapping(value = "/infoPatient", method = RequestMethod.GET)
@@ -52,15 +57,18 @@ public class PatientControler {
 	@GetMapping(path = "/deletepatient")
 	public String deletepatient(Long id) {
 		patientRepository.deleteById(id);
-		return "redirect:/listpatients";
+		return "redirect:/hospitalManagement";
 
 	}
 
-	@GetMapping(path = "/listpatients")
-	public String listpatients(Model model) {
+	@GetMapping(path = "/hospitalManagement")
+	public String hospitalManagement(Model model) {
 		List<Patient> lp = patientRepository.findAll();
 		model.addAttribute("listpatients", lp);
-		return "listpatients";
+		
+		List<medecin> lm = medecinRepository.findAll();
+		model.addAttribute("listmedecin", lm);
+		return "hospitalManagement";
 
 	}
 	

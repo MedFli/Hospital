@@ -38,7 +38,7 @@ public class MedecinControler {
 	public String deletemedecin(Long id) {
 		medecinRepository.deleteById(id);
 
-		return "redirect:/listmedecin";
+		return "redirect:/hospitalManagement";
 	}
 	@RequestMapping(value="/addMedecin",method = RequestMethod.GET)
 	public String addMedecin(Model model) {
@@ -49,13 +49,13 @@ public class MedecinControler {
 	@RequestMapping(value="/saveMedecin",method = RequestMethod.POST)
 	public String saveMedecin(Model model ,medecin medecin) {
 	medecinRepository.save(medecin);
-	return "redirect:/listmedecin";
+	return "redirect:/hospitalManagement";
 	}
 	@GetMapping(path = "/listmedecin")
 	public String listmedecin(Model model) {
 		List<medecin> lm = medecinRepository.findAll();
 		model.addAttribute("listmedecin", lm);
-		return "listmedecin";
+		return "hospitalManagement";
 
 	}
 }
