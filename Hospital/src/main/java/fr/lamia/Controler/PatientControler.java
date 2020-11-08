@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import fr.lamia.DAO.AppoitmentRepository;
 import fr.lamia.DAO.MedecinRepository;
 import fr.lamia.DAO.PatientRepository;
+import fr.lamia.Entities.Appoitment;
 import fr.lamia.Entities.Patient;
 import fr.lamia.Entities.medecin;
 
@@ -21,6 +23,9 @@ public class PatientControler {
 	
 	@Autowired
 	private MedecinRepository medecinRepository;
+	
+	@Autowired
+	private AppoitmentRepository appoitmentRepository;
 
 	@RequestMapping(value = "addPatient",method = RequestMethod.GET)
 	public String addPatient(Model model) {
@@ -68,7 +73,11 @@ public class PatientControler {
 		
 		List<medecin> lm = medecinRepository.findAll();
 		model.addAttribute("listmedecin", lm);
+		
+		  List<Appoitment> la = appoitmentRepository.findAll();
+		     model.addAttribute("MyAppoints", la);
 		return "hospitalManagement";
+		
 
 	}
 	
@@ -78,4 +87,36 @@ public class PatientControler {
 		return "Paiement";
 	}
 	
+	@GetMapping(path = "/Contact")
+	public String Contact() {
+		
+		return "Contact";
+	}
+	@RequestMapping(value = "/addAppoint",method = RequestMethod.GET)
+	public String addAppoint(Model model) {
+		model.addAttribute("appoitment", new Appoitment());
+		return "index";
+	}
+	
+	@RequestMapping(value = "makeAppoint", method = RequestMethod.POST)
+	public String makeAppoint(Appoitment appoitment) {
+		
+		appoitmentRepository.save(appoitment);
+		
+		return "Contact";
+	}
+	
+	@GetMapping(path = "/index")
+	public String index() {
+
+		return "index";
+	}
+	
+	@GetMapping(path = "/MyAppoints")
+	public String MyAppoints(Model model) {
+   
+		return "hospitalManagement";
+	}
+
+
 }

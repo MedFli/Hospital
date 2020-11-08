@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="navbar" style="height: 100%">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!-- Custom styles for this template -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css" />
+<meta charset="ISO-8859-1">
+<title>Hospital Management</title>
+</head>
+<body style="height: 100%;">
+	<div layout:fragment="pagecontent" style="height: 100%;">
+		
+		<nav class="navside"
+			style="float: left; width: 20%; height: 1800px; background-color: gray; padding: 20px;border-color: black;">
+			<a type="button" class="btn btn-info rounded-pill"
+				th:href="@{/addMedecin}">Add new Doctor  <i class='fas fa-plus-square'></i></a><br> <br> <a
+				type="button" class="btn btn-info rounded-pill"
+				th:href="@{/addPatient}">Add new Patient  <i class='fas fa-plus-square'></i></a> <br> <br>
+		</nav>
+		
+		<div class="card"
+			style="text-indent: 50px; text-align: center; letter-spacing: 3px;">
+			<img src="images/bann.jpg" class="card-img-top " alt="..."
+			style="border: 0; height: 400px;">
+			<div class="card-header"
+				style="background: linear-gradient(55deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 85%); padding: 20px;">
+				<i class="fas fa-procedures" style="font-size: 36px;"></i>
+			</div>
+			<div class="alert alert-warning" role="alert">To see more info
+				about patient please click button info !</div>
+			<div class="card-body">
+				<form method="get" th:action="@{listpatients}">
+					<table class="table">
+						<tr th:each="p:${listpatients}">
+							<td th:text="${p.name}"></td>
+							<td><a class="fas fa-search-plus" style="font-size:24px;"
+								th:href="@{/infoPatient(id=${p.id}, name=${p.name},
+												 adresse=${p.adresse},date_Naissance=${p.date_Naissance},
+												 numero_tel=${p.numero_tel})}"></a></td>
+							<td><a class="far fa-trash-alt"
+								th:href="@{/deletepatient(id=${p.id})}"></a></td>
+						</tr>
+					</table>
+					<div class="form-group" style="float: right">
+						<br> <input type="search" name="keyword" value="" size="27"
+							maxlength="150" placeholder="Rechercher les patients">
+						<button class="btn btn-info rounded-pill"
+							style="margin-left: 10px">Search</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<br> <br> <br>
+
+
+
+		<div class="card"
+			style="margin-left: 10px; text-indent: 50px; text-align: center; letter-spacing: 3px;">
+			<div class="card-header"
+				style="background: linear-gradient(55deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 85%); padding: 20px;">
+				<i class="fas fa-user-md" style="font-size: 36px;"></i>
+			</div>
+			<div class="card-body">
+				<form method="get" th:action="@{listmedecin}">
+					<table class="table">
+						<tr th:each="m:${listmedecin}">
+							<td th:text="${m.name}"></td>
+							<td><a class="btn btn-outline-info rounded-pill"
+								th:href="@{/infoMedecin(id=${m.id})}">info</a></td>
+							<td><a class="fas fa-edit"></a></td>
+							<td><a class="far fa-trash-alt"
+								th:href="@{deletemedecin(id=${m.id})}"></a></td>
+						</tr>
+					</table>
+					<br>
+					<div class="form-group" style="float: right">
+						<input type="search" name="keyword" value="" size="27"
+							maxlength="150" placeholder="Rechercher du staff">
+						<button class="btn btn-info rounded-pill"
+							style="margin-left: 10px">Search</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

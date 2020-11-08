@@ -23,7 +23,7 @@
 </head>
 <body>
 	<div layout:fragment="pagecontent">
-		<div class="container justify-content-center">
+		<div class="container justify-content-center"style="text-indent: 50px; text-align: center; letter-spacing: 3px;">
 			<div class="card text-center">
 				<div class="card-header">
 					<ul class="nav nav-pills card-header-pills justify-content-center">
@@ -45,16 +45,16 @@
 				<div class="card-body">
 
 					<form th:action="@{infoPatient}">
-						<ul>
-							<li th:text="${patient.id}"></li>
-							<li th:text="${patient.name}"></li>
-							<li th:text="${patient.date_Naissance}"></li>
-							<li th:text="${patient.adresse}"></li>
-							<li th:text="${patient.numero_tel}"></li>
-						</ul>
-					</form>
+						
+						<i class='fas fa-home' th:text="${patient.id}"></i><br>
+						<i class='far fa-user-circle' th:text="${patient.name}"></i><br>
+						<i class='far fa-calendar-alt'th:text="${patient.date_Naissance}"></i><br>
+						<i class='fas fa-home' th:text="${patient.adresse}"></i><br>
+						<i class='fas fa-phone' th:text="${patient.numero_tel}"></i><br><br>
+						
+					</form><br><br>
 					<a type="button" class="btn btn-secondary"
-						th:href="@{listpatients}">Back</a> <a type="button"
+						th:href="@{hospitalManagement}">Back</a> <a type="button"
 						class="btn btn-secondary" th:href="@{Paiement}">Paiement</a>
 				</div>
 			</div>
