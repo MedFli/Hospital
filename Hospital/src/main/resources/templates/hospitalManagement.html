@@ -27,46 +27,56 @@
 	<div layout:fragment="pagecontent" style="height: 100%;">
 
 		<nav class="navside"
-			style="float: left; width: 25%; height: 1800px; background-color: gray; padding: 7px; border-color: black; text-indent: 50px; letter-spacing: 3px;">
-			<br> <br>
-			<br> <br>
-			<i class='fas fa-cogs' style="font-size: 37px;float: left;"></i><br> <br>
-			<h5 class="text" style="color: black">Hospital Management</h5>
+			style="float: left; width: 25%; height: 2000px; background-color: gray; padding: 7px; border-color: black; text-indent: 50px; letter-spacing: 3px;">
 			<br>
-			<br>
-			<div class="card" style="background-color: gray; padding: 20px;border: opx">
-				
-				<br> <a type="button" class="btn btn-info rounded-pill"
-					th:href="@{/addMedecin}">Add new Doctor <i
-					class='fas fa-user-plus'></i></a><br>
-				<a type="button" class="btn btn-info rounded-pill"
-					th:href="@{/addPatient}">Add new Patient <i
-					class='fas fa-user-plus'></i></a> <br>
-				<br> <a type="button" class="btn btn-info rounded-pill"
-					th:href="@{/addMedecin}">Billing Management<i
-					class='fas fa-file-invoice'></i></a><br> <a type="button"
-					class="btn btn-info rounded-pill" th:href="@{/boutique}">Make
-					Order<i class='fas fa-cart-plus'></i>
-				</a><br> <br><br> <br>
+			<div class="card"
+				style="background-color: gray; padding: 20px; border: opx">
+				<i class='fas fa-cogs' style="font-size: 37px; float: left;"></i><br>
+				<br>
+				<h5 class="text" style="color: black">Hospital Management</h5>
+				<br> <br> <a type="button"
+					class="btn btn-info rounded-pill" th:href="@{/addMedecin}">Add
+					new Doctor <i class='fas fa-user-plus'></i>
+				</a><br> <a type="button" class="btn btn-info rounded-pill"
+					th:href="@{/addPatient}">Add new Patient<i
+					class='fas fa-user-plus'></i></a> <br> <a type="button"
+					class="btn btn-info rounded-pill" th:href="@{/boutique}">Billing
+					Management<i class='fas fa-file-invoice'></i>
+				</a><br> <br> <br>
+
 				<h5 class="text" style="color: black">Contact Management</h5>
 				<br> <a type="button" class="btn btn-info rounded-pill"
 					th:href="@{/addMedecin}">My Appoitments<i
 					class='far fa-calendar'></i></a><br> <a type="button"
 					class="btn btn-info rounded-pill" th:href="@{/addMedecin}">Contact
 					Client <i class='fas fa-pen-alt'></i>
-				</a><br> <br>
-				<h5 class="tesxt" style="color: black">Laboratories</h5>
+				</a><br> <br> <br> <i class='	fas fa-cart-plus'
+					style="font-size: 37px; float: left;"></i><br> <br>
+				<h5 class="text" style="color: black">MarketPlace</h5>
+				<br> <br> <a type="button"
+					class="btn btn-info rounded-pill" th:href="@{/boutique}">Make
+					Order<i class='fas fa-cart-plus'></i>
+				</a><br> <a type="Panier" class="btn btn-info rounded-pill"
+					th:href="@{/Panier}">Mon panier <i
+					class='fas fa-cart-arrow-down'></i>
+				</a><br> <a type="button" class="btn btn-info rounded-pill"
+					th:href="@{/addPatient}">Add new Article <i
+					class='fas fa-cart-plus'></i></a> <br> <br> <br> <br>
+				<h5 class="text" style="color: black">Laboratories</h5>
 				<br> <a type="button" class="btn btn-info rounded-pill"
 					th:href="@{/addMedecin}">Contact Laboratory <i
-					class='fas fa-plus-square'></i></a><br> <br>
+					class='fas fa-flask'></i></a><br> <br> <br> <br> <br>
+				<br> <br>
+				<h5 class="text" style="color: black">Setting</h5>
+				<a type="button" class="btn btn-info rounded-pill"
+					th:href="@{/addMedecin}">Help& Settings<i class='fas fa-tools'></i></a><br>ss
 			</div>
 		</nav>
 
 		<div class="card"
 			style="text-indent: 50px; text-align: center; letter-spacing: 3px;">
-			
-			<div class="card-header"
-				style="background: gray; padding: 20px;">
+
+			<div class="card-header" style="background: gray; padding: 20px;">
 				<i class="fas fa-procedures" style="font-size: 36px; float: left;"></i>
 			</div>
 			<div class="alert alert-warning" role="alert">To see more info
@@ -98,24 +108,23 @@
 
 		<div class="card"
 			style="margin-left: 10px; text-indent: 50px; text-align: center; letter-spacing: 3px;">
-			<div class="card-header"
-				style="background: gray; padding: 20px;">
-				<i class="fas fa-stethoscope" style="font-size: 36px;float: left;"></i>
+			<div class="card-header" style="background: gray; padding: 20px;">
+				<i class="fas fa-stethoscope" style="font-size: 36px; float: left;"></i>
 			</div>
 			<div class="card-body">
 				<div class="container">
 					<form method="get" th:action="@{listmedecin}">
-					<div class="form-group">
-						<table class="w3-table w3-striped w3-border">
-							<tr th:each="m:${listmedecin}">
-								<td th:text="${m.name}"></td>
-								<td><a class="fas fa-id-card-alt" style="font-size: 24px;"
-									th:href="@{/hospitalManagement}"></a></td>
-								
-								<td><a class="far fa-trash-alt"
-									th:href="@{deletemedecin(id=${m.id})}"></a></td>
-							</tr>
-						</table>
+						<div class="form-group">
+							<table class="w3-table w3-striped w3-border">
+								<tr th:each="m:${listmedecin}">
+									<td th:text="${m.name}"></td>
+									<td><a class="fas fa-id-card-alt" style="font-size: 24px;"
+										th:href="@{/hospitalManagement}"></a></td>
+
+									<td><a class="far fa-trash-alt"
+										th:href="@{deletemedecin(id=${m.id})}"></a></td>
+								</tr>
+							</table>
 						</div>
 						<br>
 						<div class="form-group" style="float: right">
@@ -128,27 +137,26 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="card"
 			style="margin-left: 10px; text-indent: 50px; text-align: center; letter-spacing: 2px;">
-			<div class="card-header"
-				style="background: gray; padding: 20px;">
-				<i class="far fa-envelope-open" style="font-size: 36px;float: left;"></i>
+			<div class="card-header" style="background: gray; padding: 20px;">
+				<i class="far fa-envelope-open"
+					style="font-size: 36px; float: left;"></i>
 			</div>
 			<div class="card-body">
 				<div class="container">
 					<form method="get" th:action="@{MyAppoints}">
-					<div class="form-group">
-						<table class="w3-table-all w3-card-4">
-							<tr th:each="a:${MyAppoints}">
-								<td th:text="${a.name}"></td>
-								<td th:text="${a.adresse}"></td>
-								<td th:text="${a.email}"></td>
-								<td th:text="${a.message}"></td>
-								<td><a class="far fa-trash-alt"
-									></a></td>
-							</tr>
-						</table>
+						<div class="form-group">
+							<table class="w3-table-all w3-card-4">
+								<tr th:each="a:${MyAppoints}">
+									<td th:text="${a.name}"></td>
+									<td th:text="${a.adresse}"></td>
+									<td th:text="${a.email}"></td>
+									<td th:text="${a.message}"></td>
+									<td><a class="far fa-trash-alt"></a></td>
+								</tr>
+							</table>
 						</div>
 						<br>
 						<div class="form-group" style="float: right">

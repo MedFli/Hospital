@@ -18,9 +18,5 @@ public class AppControler {
 
 		return "About";
 	}
-	@GetMapping(path = "/boutique")
-	public String boutique() {
 
-		return "boutique";
-	}
 }

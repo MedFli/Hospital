@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="navbar" style="height: 100%">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!-- Custom styles for this template -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css" />
+<meta charset="ISO-8859-1">
+<title>Hospital Management</title>
+</head>
+<body style="height: 100%;">
+	<div layout:fragment="pagecontent" style="height: 100%;">
+
+		<nav class="navside"
+			style="float: left; width: 25%; height: 1800px; background-color: gray; padding: 7px; border-color: black; text-indent: 50px; letter-spacing: 3px;">
+			<br> <br> <br> <br> <i class='fas fa-cogs'
+				style="font-size: 37px; float: left;"></i><br> <br> <br>
+			<div class="card" style="background-color: gray;">
+				<h5 class="text" style="color: black">Hospital Management</h5>
+				<br> <a type="button" class="btn btn-info rounded-pill"
+					th:href="@{/addProduct}">Add new Product <i
+					class='fas fa-user-plus'></i></a><br> <a type="button"
+					class="btn btn-info rounded-pill" th:href="@{/addPatient}">Add
+					new Patient <i class='fas fa-user-plus'></i>
+				</a> <br> <br> <a type="button"
+					class="btn btn-info rounded-pill" th:href="@{/addMedecin}">Add
+					new Doctor<i class='fas fa-file-invoice'></i>
+				</a><br> <a type="button" class="btn btn-info rounded-pill"
+					th:href="@{/addMedecin}">Make Order<i class='fas fa-cart-plus'></i>
+				</a><br> <br>
+				<h5 class="text" style="color: black">Contact Management</h5>
+				<br> <a type="button" class="btn btn-info rounded-pill"
+					th:href="@{/addMedecin}">My Appoitments<i
+					class='far fa-calendar'></i></a><br> <a type="button"
+					class="btn btn-info rounded-pill" th:href="@{/addMedecin}">Contact
+					Client <i class='fas fa-pen-alt'></i>
+				</a><br> <br>
+				<h5 class="tesxt" style="color: black">Laboratories</h5>
+				<br> <a type="button" class="btn btn-info rounded-pill"
+					th:href="@{/addMedecin}">Contact Laboratory <i
+					class='fas fa-plus-square'></i></a><br> <br>
+			</div>
+		</nav>
+		<div class="card"
+			style="text-indent: 50px; text-align: center; letter-spacing: 3px;">
+			<img src="images/bann.jpg" class="card-img-top " alt="..."
+				style="border: 0; height: 400px;">
+			<div class="card-header"
+				style="background: linear-gradient(55deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 85%); padding: 20px;">
+				<i class="fas fa-shopping-bag" style="font-size: 36px;"></i>
+			</div>
+			<div class="alert alert-warning" role="alert">Update boutique ,
+				Add a new product to your list!</div>
+				<div class="card-body">
+			<form th:action="@{saveProduct}" method="post">
+				<div class="form-group row">
+					<label class="control-label col-md-6">Name :</label> <input
+						type="text" name="name" th:value="${produit.name}">
+				</div>
+
+				<div class="form-group row">
+					<label class="control-label col-md-6">designation: </label> <input
+						type="text" name="designation" th:value="${produit.designation}">
+				</div>
+				<div class="form-group row">
+					<label class="control-label col-md-6"> Price </label> <input
+						type="text" name="price" th:value="${produit.price}">
+				</div>
+
+				<div class="form-group row">
+				
+					<label class="control-label col-md-6"> image </label>
+					<input
+						type="file" class="form-control-file" id="uploadimage"
+						th:value="${produit.image}" style="width: 20px">
+				</div>
+
+				<br>
+				<div class="form-group pull-right">
+					<button class="btn btn-primary rounded-pill" type="submit"
+						style="background-color: green;">Submit</button>
+					<button class="btn btn-secondary rounded-pill"
+						th:href="@{hospitalManagement}">Back</button>
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
