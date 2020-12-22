@@ -15,7 +15,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Hospital</name>
 	<packaging>war</packaging>
-	<description>Demo project for Spring Boot</description>
+	<description>Health Care At your Desk : Desktop app</description>
 
 	<properties>
 		<java.version>1.8</java.version>
