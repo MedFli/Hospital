@@ -41,9 +41,8 @@ afficher les produits dans la boutiques ( avec les images )
 choisir produit dans boutique 
 
 
-
 produit / boutique / panier 
-ajouter produits dans boutique
+ajouter image dans bDD
 list produit boutiques , 
 selectionner produit (id name price esignation )
 enregistrer le produit selectioner dans le panier
@@ -56,6 +55,31 @@ modifier quantier
 calcule montant produit choisis 
 valider commnde
 afficher commande 
+
+
+
+    @Transactional
+    public void save(ProductForm productForm) {
+ 
+        String code = productForm.getCode();
+ 
+        Product product = null;
+ 
+            product = this.findProduct(code);
+            product = new Product();
+            product.setCreateDate(new Date());
+        product.setCode(code);
+        product.setName(productForm.getName());
+        product.setPrice(productForm.getPrice());
+ 
+            byte[] image = null;
+                image = productForm.getFileData().getBytes();
+                product.setImage(image);
+                
+                
+            session.persist(product);
+        session.flush();
+    }
 
 
 

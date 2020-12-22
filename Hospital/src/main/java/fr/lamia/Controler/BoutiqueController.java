@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import antlr.StringUtils;
 import fr.lamia.DAO.ProduitRepository;
 import fr.lamia.Entities.Produit;
 @Controller
@@ -31,7 +33,8 @@ public class BoutiqueController {
 		return "addProduct";
 	}
 	@RequestMapping(value = "saveProduct",method = RequestMethod.POST)
-	public String savePatient(Produit produit) {
+	public String saveProduct(Produit produit,Byte image) {
+		byte[] bytes= produit.getImage();
 		produitRepository.save(produit);
 		return "redirect:/boutique";
 	} 

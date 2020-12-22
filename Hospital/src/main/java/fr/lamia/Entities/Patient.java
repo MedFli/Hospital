@@ -7,8 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
 @Data
-@Entity 
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -21,8 +22,6 @@ public class Patient {
 	private String prenom;
 	private Boolean malade = true;
 	private String date_Naissance;
-	private String adresse; 
+	private String adresse;
 	private long numero_tel;
-	}
-	
-
+}

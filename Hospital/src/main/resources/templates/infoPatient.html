@@ -34,28 +34,25 @@
 						<li class="nav-item"><a class="nav-link" href="#"
 							tabindex="-1" aria-disabled="true">Dentition</a></li>
 					</ul>
-
-
 				</div>
 				<div class="alert alert-primary" role="alert">
 					Pour acceder au informations concernant la <a href="#"
 						class="alert-link">fiche paiement du client. </a> Cliquez sur le
 					boutton Paiement.
 				</div>
-				<div class="card-body">
-
-					<form th:action="@{infoPatient}">
-						
-						<i class='fas fa-home' th:text="${patient.id}"></i><br>
-						<i class='far fa-user-circle' th:text="${patient.name}"></i><br>
-						<i class='far fa-calendar-alt'th:text="${patient.date_Naissance}"></i><br>
-						<i class='fas fa-home' th:text="${patient.adresse}"></i><br>
-						<i class='fas fa-phone' th:text="${patient.numero_tel}"></i><br><br>
-						
+				<div class="card-body" style="text-align: center;" >
+					<form th:action="@{infoPatient}" >
+						<table class="w3-table w3-striped w3-border" >
+				<tr>	<td th:text="${patient.id}"></td> </tr>
+				<tr>	<td th:text="${patient.name}"><td></tr>
+				<tr>	<td th:text="${patient.date_Naissance}"><td></tr>
+				<tr>	<td th:text="${patient.adresse}"><td></tr>
+				<tr>	<td th:text="${patient.numero_tel}"><td></tr>
+						</table>
 					</form><br><br>
 					<a type="button" class="btn btn-secondary"
 						th:href="@{hospitalManagement}">Back</a> <a type="button"
-						class="btn btn-secondary" th:href="@{Paiement}">Paiement</a>
+						class="btn btn-secondary" th:href="@{Paiement}">Facture</a>
 				</div>
 			</div>
 		</div>

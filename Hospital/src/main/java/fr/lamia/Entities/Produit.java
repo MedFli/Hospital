@@ -37,4 +37,9 @@ public class Produit {
 	    private String designation;
 	    
 	    private Long quantite;
+
+		public static Object getFileData() {
+			// TODO Auto-generated method stub
+			return null;
+		}
 }
